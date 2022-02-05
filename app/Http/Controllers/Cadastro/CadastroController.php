@@ -49,6 +49,6 @@ class CadastroController extends Controller
 
         $usuario->cadastroUsuario($arrayUsuario);
 
-        $loginController->loginPosCadastro($arrayUsuario['email'], $arrayUsuario['senha']);
+        return \redirect('/login');
     }
 }

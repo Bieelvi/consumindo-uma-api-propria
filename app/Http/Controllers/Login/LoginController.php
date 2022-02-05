@@ -39,17 +39,4 @@ class LoginController extends Controller
 
         return \redirect('/usuario');
     }
-
-    public function loginPosCadastro(string $email, string $password)
-    {  
-        $token = $this->login->login($email, $password);
-
-        if (!$token) {
-            return \redirect()->back()->withErrors('Credenciais Incorretas');
-        }
-
-        $this->session->set('token', $token->token);
-
-        return \redirect('/usuario');
-    }
 }

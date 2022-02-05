@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-    <form action="" method="post">
+    <form action="#" method="post">
         <div class="row">
             <div class="col-4">
                 <label for="primeiro_nome" class="form-label fw-bolder">Primeiro Nome</label>
@@ -111,7 +111,7 @@
         <div class="row">
             <div class="col-6">
                 <label for="criado_em" class="form-label fw-bolder">Criado</label>
-                <input type="text" name="criado_em" id="criado_em" name="criado_em" class="form-control" value="{{ $usuario->user->create_at->date }}">
+                <input type="text" name="criado_em" id="criado_em" name="criado_em" class="form-control" value="{{ $usuario->user->created_at->date }}">
             </div>
             <div class="col-6">
                 <label for="atualizado_em" class="form-label fw-bolder">Ultima Atualizacao</label>
@@ -120,5 +120,7 @@
         </div>
 
         <button class="btn btn-success mt-3">Salvar</button>
+
+        <a href="/deletar/{{ $usuario->user->id }}" class="btn btn-danger mt-3">Apagar</a>
     </form>
 @endsection

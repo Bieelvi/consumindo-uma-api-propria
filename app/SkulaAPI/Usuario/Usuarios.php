@@ -97,4 +97,27 @@ class Usuarios
 
         return $response;
     }
+
+    public function deletaUsuario(int $id, string $token): string
+    {
+        $curl = curl_init();
+
+        $headers = [
+            'Authorization: Bearer ' . $token,
+            'Content-Type: application/json'
+        ];
+
+        curl_setopt_array($curl, [
+            CURLOPT_URL => "http://localhost:8080/user/{$id}",
+            CURLOPT_CUSTOMREQUEST => "DELETE",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_HTTPHEADER => $headers 
+        ]);
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+
+        return $response;
+    }
 }

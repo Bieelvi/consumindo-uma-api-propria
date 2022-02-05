@@ -28,6 +28,8 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::get('/usuario', [UsuarioController::class, 'index'])->middleware('autenticador');
 Route::get('/usuario/{id}', [UsuarioController::class, 'buscaUsuario'])->middleware('autenticador');
 
+Route::get('/deletar/{id}', [UsuarioController::class, 'deletaUsuario'])->middleware('autenticador');
+
 Route::get('/cadastro', [CadastroController::class, 'index']);
 Route::post('/cadastro', [CadastroController::class, 'store']);
 

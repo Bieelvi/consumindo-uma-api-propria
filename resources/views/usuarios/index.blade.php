@@ -9,18 +9,18 @@
 @section('content')
     
     <ul class="list-group">
-    @foreach ($usuarios as $usuario)            
-        <li class="list-group-item d-flex justify-content-between">
+    @for ($i = 0; $i < count($usuarios); $i++)       
+        <li class="list-group-item d-flex justify-content-between align-items-center">
             <span>
-                <img src="{{ $usuario->user->avatar }}" alt="foto perfil">
+                <img src="http://localhost:8080{{ $usuarios[$i]->avatar }}" alt="foto perfil" height="100" width="100">
                 
-                <b>Nome:</b> {{ $usuario->user->first_name .' '. $usuario->user->last_name }}
+                <b>Nome:</b> {{ $usuarios[$i]->first_name .' '. $usuarios[$i]->last_name }}
             </span>
 
             <span> 
-                <a href="/usuario/{{ $usuario->user->id }}" class="btn btn-primary">Perfil</a>
+                <a href="/usuario/{{ $usuarios[$i]->id }}" class="btn btn-primary">Perfil</a>
             </span>
         </li>
-    @endforeach
+        @endfor 
     </ul>
 @endsection

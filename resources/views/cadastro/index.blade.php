@@ -86,7 +86,7 @@
                 <select class="form-select">
                     <option value="0">Escolha</option>
                     @foreach ($preferencias as $preferencia)
-                        <option value="{{ $preferencia->id }}">{{ $preferencia->sub_category }}</option>
+                        <option value="{{ $preferencia->id }}">{{ $preferencia->name }}</option>
                     @endforeach
                 </select>
             </div>
